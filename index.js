@@ -280,9 +280,10 @@ async function renderUrlToImageAsync(browser, pageConfig, url, path) {
       type: 'png', // Always use PNG for screenshot
       captureBeyondViewport: false,
       clip: {
-        x: 0,
-        y: 0,
-        ...size
+        x: pageConfig.screenClip.x,
+        y: pageConfig.screenClip.y,
+        height: pageConfig.screenClip.height,
+        width: pageConfig.screenClip.width
       }
     });
   } catch (e) {

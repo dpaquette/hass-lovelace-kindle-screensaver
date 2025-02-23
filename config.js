@@ -25,6 +25,14 @@ function getPagesConfig() {
           getEnvironmentVariable("RENDERING_SCREEN_HEIGHT", suffix) || 800,
         width: getEnvironmentVariable("RENDERING_SCREEN_WIDTH", suffix) || 600,
       },
+      screenClip: {
+        x:  getEnvironmentVariable("SCREEN_CLIP_X", suffix) || 0,
+        y:  getEnvironmentVariable("SCREEN_CLIP_Y", suffix) || 0,
+        height:  getEnvironmentVariable("SCREEN_CLIP_HEIGHT", suffix) ||
+          getEnvironmentVariable("RENDERING_SCREEN_HEIGHT", suffix) || 800,
+        width:  getEnvironmentVariable("SCREEN_CLIP_WIDTH", suffix) ||
+          getEnvironmentVariable("RENDERING_SCREEN_WIDTH", suffix) || 600
+      }
       grayscaleDepth: getEnvironmentVariable("GRAYSCALE_DEPTH", suffix) || 8,
       removeGamma: getEnvironmentVariable("REMOVE_GAMMA", suffix) === "true" || false,
       blackLevel: getEnvironmentVariable("BLACK_LEVEL", suffix) || "0%",
